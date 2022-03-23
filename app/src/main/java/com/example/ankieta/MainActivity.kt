@@ -47,8 +47,25 @@ class MainActivity : AppCompatActivity() {
             if(gry.isChecked) {
                 result.append("\ngry")
             }
-
+            findViewById<RadioButton>(R.id.rdbtn1).isEnabled = false;
+            findViewById<RadioButton>(R.id.rdbtn2).isEnabled = false;
+            findViewById<EditText>(R.id.wiekInput).isEnabled = false;
+            sport.isEnabled = false;
+            muzyka.isEnabled = false;
+            turystyka.isEnabled = false;
+            gry.isEnabled = false;
+            startbtn.isEnabled = false;
             Toast.makeText(applicationContext, result.toString(), Toast.LENGTH_SHORT).show();
+        }
+        edytujbtn.setOnClickListener {
+            findViewById<RadioButton>(R.id.rdbtn1).isEnabled = true;
+            findViewById<RadioButton>(R.id.rdbtn2).isEnabled = true;
+            findViewById<EditText>(R.id.wiekInput).isEnabled = true;
+            sport.isEnabled = true;
+            muzyka.isEnabled = true;
+            turystyka.isEnabled = true;
+            gry.isEnabled = true;
+            startbtn.isEnabled = true;
         }
     }
 }
