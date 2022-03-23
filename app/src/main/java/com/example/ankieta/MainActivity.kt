@@ -11,6 +11,8 @@ class MainActivity : AppCompatActivity() {
     lateinit var gry: CheckBox;
     lateinit var startbtn: Button;
     lateinit var edytujbtn: Button;
+    lateinit var radioGroup: RadioGroup;
+    lateinit var radioButton: RadioButton;
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -21,12 +23,17 @@ class MainActivity : AppCompatActivity() {
         gry = findViewById(R.id.gryBox);
         startbtn = findViewById(R.id.wysbtn);
         edytujbtn = findViewById(R.id.edbtn);
+        radioGroup = findViewById(R.id.rdGroup);
 
 
         startbtn.setOnClickListener {
             val result = StringBuilder();
-            result.append("Wiek: ", findViewById<EditText>(R.id.wiekInput))
-            result.append("Zainteresowania: ")
+            val intSelectedButton: Int = radioGroup!!.checkedRadioButtonId
+            radioButton = findViewById(intSelectedButton);
+
+            result.append("Płeć: ", radioButton.text);
+            result.append("\nWiek: ", findViewById<EditText>(R.id.wiekInput))
+            result.append("\nZainteresowania: ")
 
             if(sport.isChecked) {
                 result.append("\nsport")
