@@ -32,7 +32,7 @@ class MainActivity : AppCompatActivity() {
             radioButton = findViewById(intSelectedButton);
 
             result.append("Płeć: ", radioButton.text);
-            result.append("\nWiek: ", findViewById<EditText>(R.id.wiekInput))
+            result.append("\nWiek: ", findViewById<EditText>(R.id.wiekInput).text)
             result.append("\nZainteresowania: ")
 
             if(sport.isChecked) {
