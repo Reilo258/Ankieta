@@ -55,6 +55,8 @@ class MainActivity : AppCompatActivity() {
             turystyka.isEnabled = false;
             gry.isEnabled = false;
             startbtn.isEnabled = false;
+
+            findViewById<TextView>(R.id.wyniklbl).text = result.toString();
             Toast.makeText(applicationContext, result.toString(), Toast.LENGTH_SHORT).show();
         }
         edytujbtn.setOnClickListener {
